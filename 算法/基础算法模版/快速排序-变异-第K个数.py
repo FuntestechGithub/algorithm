@@ -1,5 +1,5 @@
 '''
-题目地址： https://www.acwing.com/problem/content/description/787/
+题目地址： https://www.acwing.com/problem/content/description/786/
 
 变异的快速排序， 需要找到第k个最小的数。 可以使用快速排然后找到第K个数的值。 模版为了实现在排序中直接找到K个数的值。
 '''

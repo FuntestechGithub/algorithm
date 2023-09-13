@@ -1,5 +1,5 @@
 '''
-题目地址： https://www.acwing.com/problem/content/description/787/
+题目地址： https://www.acwing.com/problem/content/description/785/
 
 快速排序是一种常用的排序算法，其时间复杂度为 O(nlogn)。
 '''
