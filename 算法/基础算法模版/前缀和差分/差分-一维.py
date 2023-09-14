@@ -21,6 +21,8 @@ c = 10
 应用：
 给定a数组 a[1],a[2],...,a[n] 构造差分数组b[N] 满足a[i] = b[1] + b[2] + ... + b[i]
 复杂度为0(1)
+
+题目链接： https://www.acwing.com/problem/content/description/799/
 '''
 
 
