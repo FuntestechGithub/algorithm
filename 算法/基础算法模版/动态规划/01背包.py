@@ -16,6 +16,35 @@ f[i][j] = max(f[i-1][j], f[i-1][j-vol[i]] + val[i])
 f[0][0] = 0
 '''
 
+# 递归解法
+'''
+先确定状态个数， 有两个状态分别是物品数量和背包体积。
+'''
+
+vol = [1, 2, 3, 4]
+val = [2, 4, 4, 5]
+target = 5
+
+cache = {}
+def dfs(i, j):
+    if i == 0:
+        return 0
+        
+    if i+j*0.0001 in cache:
+        return cache[i+j*0.0001]
+    else:
+        # 不选
+        res = dfs(i-1, j)
+        # 选
+        if(j >= vol[i-1]):
+            # 选的时候，需要控制条件是背包总额大于当前物品体积。因为如果小于，就不能选。
+            res = max(res, dfs(i-1, j-vol[i-1])+val[i-1])
+        cache[i+j*0.0001] = res
+        return res
+
+res = dfs(len(vol),target)
+print(res)
+
 
 # 二维动态解法
 def main():
