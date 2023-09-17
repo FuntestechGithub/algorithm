@@ -10,7 +10,7 @@ class Solution:
     def rob(self, nums: list[int]) -> int:
         n = len(nums)
 
-        @cache
+        # @cache
         # 从后开始抢
         def dfs(x):
             if x < 0:
@@ -36,7 +36,7 @@ f[i] 表示抢劫前i个房屋获得最大收益是多少。
 f[i] = max(f[i+1], f[i+2][j]+nums[i])
 '''
 class Solution2:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         n = len(nums)
         # 因为加2， 所以需要初始化f[n+2]
         f = [0]*(n+2)
