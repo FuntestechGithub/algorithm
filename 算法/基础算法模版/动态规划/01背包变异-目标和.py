@@ -17,7 +17,7 @@ class Solution:
             return 0
         target //= 2
         
-        @cache
+        # @cache
         def dfs(i, j):
             if i < 0:
                 # 如果已经到了第一位了
@@ -33,7 +33,7 @@ class Solution:
 
 # 二维动态解法
 class Solution:
-    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+    def findTargetSumWays(self, nums: list[int], target: int) -> int:
         '''
         假设所有正数合为p
         数组里面所有数字合为s
@@ -67,7 +67,7 @@ class Solution:
 
 # 一维动态解法
 class Solution:
-    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+    def findTargetSumWays(self, nums: list[int], target: int) -> int:
         '''
         假设所有正数合为p
         数组里面所有数字合为s
