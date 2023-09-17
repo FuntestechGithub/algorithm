@@ -16,8 +16,46 @@ def longestCommonSubsequence(text1: str, text2: str) -> int:
                 dp[i+1][j+1] = 0
     return result
 
+# 一维解法
+def longestComSubstr1D(str1: str, str2: str) -> int:
+    longstr, shortstr = (str1, str2) if len(str1) > len(str2) else (str2, str1)
+    m, n = len(longstr), len(shortstr)
+    # initlize a 1D array for DP
+    dp = [0] * (m + 1)
 
-text1 = "abcde"
-text2 = "1223abacde3123123"
+    for i in range(1, n+1):
+        temp = [0] * (m + 1)
+        for j in range(1,m+1):
+            # if match, add 1 to the previous value
+            if longstr[j-1] == shortstr[i-1]:
+                temp[j] = dp[j-1] + 1
+            else:
+                temp[j] = 0
+        dp = temp
+    return dp[m]
 
-print(longestCommonSubsequence(text1, text2))
+# 显示最长连续公共子序列
+def printLongestComSubstr1D(str1: str, str2: str) -> int:
+    longstr, shortstr = (str1, str2) if len(str1) > len(str2) else (str2, str1)
+    m, n = len(longstr), len(shortstr)
+    # initlize a 1D array for DP
+    dp = [0] * (m + 1)
+    curMax = 0
+    for i in range(1, n+1):
+        temp = [0] * (m + 1)
+        for j in range(1,m+1):
+            # if match, add 1 to the previous value
+            if longstr[j-1] == shortstr[i-1]:
+                temp[j] = dp[j-1] + 1
+                if temp[j] > curMax:
+                    curMax = temp[j]
+                    currIndex = j
+            else:
+                temp[j] = 0
+        dp = temp
+    return longstr[currIndex-curMax:currIndex]
+
+# test case
+str1 = "abcde"
+str2 = "ababcde"
+print(printLongestComSubstr1D(str1, str2))
