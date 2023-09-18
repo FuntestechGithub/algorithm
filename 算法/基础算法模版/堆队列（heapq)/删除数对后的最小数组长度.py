@@ -6,7 +6,7 @@ leetcode 2856题： https://leetcode.com/problems/minimum-array-length-after-pai
 
 
 class Solution:
-    def minLengthAfterRemovals(self, nums: List[int]) -> int:
+    def minLengthAfterRemovals(self, nums: list[int]) -> int:
         '''
             所以我们找到出现次数最大的两个,将二者的次数都减去一,代表消去
             如果最后只剩下一个元素,则无法操作,否则一直操作
