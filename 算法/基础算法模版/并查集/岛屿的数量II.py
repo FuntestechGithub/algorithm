@@ -70,3 +70,4 @@ class Solution:
                     uf.union(land,nland)
             ans.append(uf.getCount())
         return ans
+# O(m * n + l), O(m * n)
