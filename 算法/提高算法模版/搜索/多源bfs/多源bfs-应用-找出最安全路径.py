@@ -47,18 +47,20 @@ class Solution:
             # 这里会将每次计算出的新坐标加入group中。
             groups.append(q)
 
-            # 并查集模板
+        # 并查集模板
         fa = list(range(n * n))
         def find(x: int) -> int:
             if fa[x] != x:
                 fa[x] = find(fa[x])
             return fa[x]
 
+        # 因为最后一个group是空的所以从倒数第二个开始，如果在d的距离能走到右下角就返回d。
         for d in range(len(groups) - 2, 0, -1):
             for i, j in groups[d]:
                 for x, y in (i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1):
+                    # 除了判断边界， 还得确保能走的格子是大于等于自己的 dis[x][y] >= dis[i][j]
                     if 0 <= x < n and 0 <= y < n and dis[x][y] >= dis[i][j]:
-                        fa[find(x * n + y)] = find(i * n + j)
+                        fa[find(x * n + y)] = find(i * n + j) # merge的操作
             if find(0) == find(n * n - 1):  # 写这里判断更快些
                 return d
         return 0
