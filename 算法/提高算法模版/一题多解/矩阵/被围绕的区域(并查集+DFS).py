@@ -1,6 +1,8 @@
 '''
 题目链接： https://leetcode.com/problems/surrounded-regions/
 
+类似于题目“岛屿的数量”
+
 思路都是从边角的O开始把相邻的格子都标记为不能走。最后将没有被标记的O都变成X。
 '''
 
