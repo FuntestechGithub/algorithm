@@ -11,7 +11,7 @@ def check(x: int) -> bool:
 
 def bssearch_1(left: int, right: int) -> int:
     while left < right:
-        mid = left + (right - left) // 2
+        mid = left + right // 2
         if check(mid):
             right = mid
         else:
@@ -20,7 +20,7 @@ def bssearch_1(left: int, right: int) -> int:
 
 def bssearch_2(left: int, right: int) -> int:
     while left < right:
-        mid = left + (right - left + 1) // 2
+        mid = left + right + 1 // 2
         if check(mid):
             left = mid
         else:
