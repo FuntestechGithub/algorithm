@@ -56,6 +56,7 @@ def printLongestComSubstr1D(str1: str, str2: str) -> int:
     return longstr[currIndex-curMax:currIndex]
 
 # test case
-str1 = "abcde"
-str2 = "ababcde"
+str1 = "ABCABC"
+str2 = "ABC"
 print(printLongestComSubstr1D(str1, str2))
+print(longestComSubstr1D(str1, str2))
