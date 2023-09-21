@@ -3,7 +3,7 @@ LeetCode: 605 https://leetcode.com/problems/can-place-flowers/description/?envTy
 '''
 # 便利
 class Solution:
-    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+    def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:
         '''
         finding the max space of the array
         '''
