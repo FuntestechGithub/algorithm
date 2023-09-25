@@ -6,7 +6,6 @@ leetcode: https://leetcode.com/problems/longest-common-subsequence/description/
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         m,n = len(text1), len(text2)
-        @cache
         def backtracking(pm,pn):
             # 递归终止条件
             if pm < 0 or pn < 0: return 0

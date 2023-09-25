@@ -3,7 +3,7 @@ LeetCode: 334 https://leetcode.com/problems/increasing-triplet-subsequence/descr
 '''
 
 class Solution:
-    def increasingTriplet(self, nums: List[int]) -> bool:
+    def increasingTriplet(self, nums: list[int]) -> bool:
         '''
         any three elements being incremental
         greedy
